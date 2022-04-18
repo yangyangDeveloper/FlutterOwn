@@ -1,5 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_zyy/list3.dart';
 import 'cardpage.dart';
+import 'package:flutter_zyy/list1.dart';
+import 'personinfolist.dart';
+import 'list2.dart';
 
 void main() {
   runApp(const MyApp());
@@ -25,7 +29,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: const cardpage(),
+      home: list3(),
     );
   }
 }
