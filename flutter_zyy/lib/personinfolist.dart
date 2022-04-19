@@ -1,4 +1,3 @@
-
 import 'dart:ui';
 import 'package:flutter/material.dart';
 
@@ -19,8 +18,7 @@ class personinfolist extends StatelessWidget {
         const Divider(),
         _tile('K\'s Kitchen', '757 Monterey Blvd', Icons.restaurant),
         _tile('Emmy\'s Restaurant', '1923 Ocean Ave', Icons.restaurant),
-        _tile(
-            'Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
+        _tile('Chaiya Thai Restaurant', '272 Claremont Blvd', Icons.restaurant),
         _tile('La Ciccia', '291 30th St', Icons.restaurant),
       ],
     );
@@ -44,12 +42,10 @@ class personinfolist extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(
-          title: Text('666'),
-        ),
-        body:  Center(
-            child: _buildList()
-        ),
-      );
+      appBar: AppBar(
+        title: Text('666'),
+      ),
+      body: Center(child: _buildList()),
+    );
   }
 }

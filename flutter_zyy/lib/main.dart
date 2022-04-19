@@ -1,9 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_zyy/list3.dart';
+import 'package:flutter_zyy/solution2.dart';
 import 'cardpage.dart';
 import 'package:flutter_zyy/list1.dart';
 import 'personinfolist.dart';
 import 'list2.dart';
+import 'uidemo1.dart';
+import 'package:flutter_zyy/Solution1.dart';
 
 void main() {
   runApp(const MyApp());

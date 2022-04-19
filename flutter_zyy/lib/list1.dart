@@ -12,7 +12,6 @@ class list1 extends StatelessWidget {
         title: Text('简单列表1'),
       ),
       body: ListView.builder(
-
         itemCount: 10,
         itemBuilder: (context, index) {
           print(index);
