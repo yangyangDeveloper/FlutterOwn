@@ -1,5 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'list2.dart';
 
 // The base class for the different types of items the list can contain.
 
@@ -59,10 +60,25 @@ class list3 extends StatelessWidget {
     MessageItem('同事', '31人'),
   ];
 
+  void updateText(String text, BuildContext context) {
+    //更新显示的事件名
+    print('5');
+    Navigator.push(
+        context,
+        MaterialPageRoute(
+            builder: (BuildContext context) {
+//                  return new SecondApp(); //不传值的跳转
+              return list2(); //带传值的跳转
+            }
+        )
+    );
+
+  }
+
   // 头部
   Widget _headingItem(BuildContext context, int index) {
     final item = items[index];
-    
+
     if (item is HeadingItem) {
       // ListTile(
       //   // 其实有默认值 好像是15
@@ -83,14 +99,21 @@ class list3 extends StatelessWidget {
           height: 30,
           padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
           alignment: Alignment.centerLeft,
+
           decoration: BoxDecoration(
             color: Color.fromARGB(255, 247, 247, 247),
           ),
-          child: Text(
-            item.heading,
-            style:
-                TextStyle(color: Colors.grey, fontSize: 11, letterSpacing: 1),
-          ));
+
+          child: GestureDetector(
+
+            onTap: () => updateText('1',context) ,
+            child: Text(
+              item.heading,
+              style:
+              TextStyle(color: Colors.grey, fontSize: 11, letterSpacing: 1),
+            ),
+          )
+      );
     }
     return Container();
   }
@@ -193,8 +216,10 @@ class list3 extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           final item = items[index];
                           if (item is HeadingItem) {
+                            //_headingItem;
                             return _headingItem(context, index);
                           } else if (item is MessageItem) {
+                            //_messageItem;
                             return _messageItem(context, index);
                           }
                           return Container();
@@ -204,6 +229,15 @@ class list3 extends StatelessWidget {
                   ),
                 ],
               ),
-            )));
+            ),
+            floatingActionButton: FloatingActionButton(
+              onPressed: () {
+                Navigator.pop(context, "我是返回值");
+              },
+              tooltip: '返回上级页面',
+               child: const Icon(Icons.update),
+             ),
+        ),
+    );
   }
 }

@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_zyy/list3.dart';
-import 'package:flutter_zyy/solution2.dart';
+import 'package:flutter_zyy/Demo.dart';
 import 'cardpage.dart';
-import 'package:flutter_zyy/list1.dart';
-import 'personinfolist.dart';
+import 'list1.dart';
 import 'list2.dart';
+import 'list3.dart';
 import 'uidemo1.dart';
-import 'package:flutter_zyy/Solution1.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +18,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
+      // routes: <String, WidgetBuilder>{
+      //  '/list1':(BuildContext context) => new list1(todo: )
+      // },
       theme: ThemeData(
         // This is the theme of your application.
         //
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
         // is not restarted.
         primarySwatch: Colors.blue,
       ),
-      home: list3(),
+      home: Demo(),
     );
   }
 }
