@@ -4,7 +4,11 @@ import 'cardpage.dart';
 import 'list1.dart';
 import 'list2.dart';
 import 'list3.dart';
+import 'list4.dart';
+
 import 'uidemo1.dart';
+import 'Routes.dart';
+
 
 void main() {
   runApp(const MyApp());
@@ -18,9 +22,13 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      // routes: <String, WidgetBuilder>{
-      //  '/list1':(BuildContext context) => new list1(todo: )
-      // },
+
+      routes: {
+        "list1":(context, {arg}) => list1(todo: arg,),
+        "list2":(context) => list2(),
+        "list4":(context, {arg}) => list4(title: arg,),
+      },
+
       theme: ThemeData(
         // This is the theme of your application.
         //

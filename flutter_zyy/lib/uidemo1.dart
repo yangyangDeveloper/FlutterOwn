@@ -17,6 +17,32 @@ class _uidemo1State extends State<uidemo1> {
       textToShow = "you like me";
     });
   }
+
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    print("调用异步函数");
+    getData();
+    print("testing调用异步函数");
+  }
+
+  // 声明getdata函数 为异步函数
+  void getData() async {
+    String username = await Future.delayed(Duration(seconds: 3),(){
+      print("get data in 3 secondes");
+      return "yangyang";
+    });
+
+    print("异步调用1");
+    Future.delayed(Duration(seconds: 2),(){
+      print("get data in 2 secondes");
+
+    });
+    print("异步调用2");
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(

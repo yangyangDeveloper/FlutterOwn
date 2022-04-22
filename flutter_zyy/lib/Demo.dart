@@ -7,6 +7,9 @@ import 'list2.dart';
 import 'list3.dart';
 import 'list4.dart';
 import 'uidemo1.dart';
+import 'loading.dart';
+import 'zyyFetchPost.dart';
+import 'timedemo.dart';
 
 class Demo extends StatefulWidget {
   const Demo({Key? key}) : super(key: key);
@@ -34,7 +37,10 @@ class _DemoState extends State<Demo> {
     CellItem('简单列表2'),
     CellItem('列表+卡片'),
     CellItem('列表4'),
-    CellItem('简单Stateful')
+    CellItem('简单Stateful'),
+    CellItem('网络请求'),
+    CellItem('网络请求2'),
+    CellItem('抓取时间'),
   ];
 
   @override
@@ -76,18 +82,22 @@ class _DemoState extends State<Demo> {
         }
 
         if (i == 1) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (BuildContext context) {
-//                  return new SecondApp(); //不传值的跳转
-            return list1(todo: todos[i]); //带传值的跳转
-          }));
+//           Navigator.push(context,
+//               MaterialPageRoute(builder: (BuildContext context) {
+// //                  return new SecondApp(); //不传值的跳转
+//             return list1(todo: todos[i]); //带传值的跳转
+//           }));
+
+          Navigator.pushNamed(context, "list1", arguments: todos[i]);
         }
 
         if (i == 2) {
-          Navigator.push(context,
-              MaterialPageRoute(builder: (BuildContext context) {
-            return list2(); //带传值的跳转
-          }));
+          Navigator.pushNamed(context, "list2");
+
+          // Navigator.push(context,
+          //     MaterialPageRoute(builder: (BuildContext context) {
+          //   return list2(); //带传值的跳转
+          // }));
         }
 
         if (i == 3) {
@@ -101,8 +111,10 @@ class _DemoState extends State<Demo> {
         if (i == 4) {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) {
-            return list4();
+            return list4(title : "我是页面4",);
           }));
+
+          Navigator.pushNamed(context, "list4", arguments: Object());
         }
 
         if (i == 5) {
@@ -111,6 +123,28 @@ class _DemoState extends State<Demo> {
             return uidemo1();
           }));
         }
+
+        if (i == 6) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return loading();
+              }));
+        }
+
+        if (i == 7) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return zyyFetchPost();
+              }));
+        }
+
+        if (i == 8) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return timedemo();
+              }));
+        }
+
       },
       title: Text(
         item.heading,

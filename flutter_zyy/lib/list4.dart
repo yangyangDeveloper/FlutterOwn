@@ -2,7 +2,14 @@ import 'dart:ui';
 import 'package:flutter/material.dart';
 
 class list4 extends StatelessWidget {
-  const list4({Key? key}) : super(key: key);
+
+  ///   WeatherRouteArguments({ required this.city, required this.country });
+  ///   final String city;
+  ///   final String country;
+  ///
+   String title;
+
+  list4({required this.title }); // 接受一个参数
 
   // #docregion list
   Widget _buildList() {
@@ -36,9 +43,10 @@ class list4 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
-        title: Text('666'),
+        title: Text("111"),
       ),
       body: Center(child: _buildList()),
     );
