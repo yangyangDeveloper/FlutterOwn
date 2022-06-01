@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_zyy/list4.dart';
+import 'package:flutter_zyy/list7.dart';
 import 'cardpage.dart';
 import 'list1.dart';
 import 'list2.dart';
@@ -10,6 +11,10 @@ import 'uidemo1.dart';
 import 'loading.dart';
 import 'zyyFetchPost.dart';
 import 'timedemo.dart';
+import 'list5.dart';
+import 'list6.dart';
+import 'list7.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class Demo extends StatefulWidget {
   const Demo({Key? key}) : super(key: key);
@@ -41,6 +46,9 @@ class _DemoState extends State<Demo> {
     CellItem('网络请求'),
     CellItem('网络请求2'),
     CellItem('抓取时间'),
+    CellItem('web测试'),
+    CellItem('web测试2'),
+    CellItem('web测试3'),
   ];
 
   @override
@@ -142,6 +150,26 @@ class _DemoState extends State<Demo> {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) {
                 return timedemo();
+              }));
+        }
+        if (i == 9) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return list5();
+              }));
+        }
+
+        if (i == 10) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return list6();
+              }));
+        }
+
+        if (i == 11) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return list7();
               }));
         }
 

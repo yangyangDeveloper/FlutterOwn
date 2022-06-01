@@ -1,6 +1,8 @@
 
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_zyy/Browser.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 // 简单列表
 class list2 extends StatelessWidget {
@@ -22,7 +24,7 @@ class list2 extends StatelessWidget {
   }
 
   List<Widget> getListChildren() {
-    return [new Text("第一条"), new Text("第二条"), new Text("第三条")];
+    return [new Text("第一条:"), new Text("第二条"), new Text("第三条")];
   }
 
 }
