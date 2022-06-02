@@ -91,17 +91,3 @@ class _list5State extends State<list5> {
 }
 
 
-// floatingActionButton: FloatingActionButton(
-// onPressed: () {
-// Navigator.of(context)
-//     .push(new MaterialPageRoute(builder: (_) {
-// return new  Browser(
-// url: "https://flutter-io.cn/",
-// title: "测试Flutterwebview",
-// );
-// }));
-// _setData();
-// },
-// tooltip: '跳转webview',
-// child: const Icon(Icons.update),
-// ),

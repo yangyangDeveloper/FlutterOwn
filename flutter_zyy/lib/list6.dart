@@ -10,18 +10,46 @@ class list6 extends StatefulWidget {
   _list6State createState() => _list6State();
 }
 
-
-
 class _list6State extends State<list6> {
 
   SharedPreferences? prefs;
   TextEditingController controller = new TextEditingController();
   String name="";
 
+  void initState() {
+    super.initState();
+    print("initstate");
+    _loadH5Url();
+  }
+
+  void _loadH5Url() async {
+    final prefs = await SharedPreferences.getInstance();
+    //name = prefs.getString("username") ?? "";
+    setState(() {
+      name = prefs.getString("username") ?? "";
+    });
+  }
+
+  saveH5Url() async {
+    print('点击 save');
+    prefs = await SharedPreferences.getInstance();
+    prefs?.setString("username", controller.text.toString());
+    setState(() {
+
+    });
+  }
+
   go() async{
     print('点击 go');
-    prefs = await SharedPreferences.getInstance();
-    name = prefs?.getString("username") ?? "";
+
+    saveH5Url();
+    Navigator.of(context).push(new MaterialPageRoute(builder: (_) {
+      return new  Browser(
+        url: "https://flutter-io.cn/",
+        title: "测试Flutterwebview",
+      );
+    }));
+
     setState(() {
 
     });
@@ -31,16 +59,6 @@ class _list6State extends State<list6> {
     print('点击 retrieve');
     prefs = await SharedPreferences.getInstance();
     name = prefs?.getString("username") ?? "";
-    setState(() {
-
-    });
-  }
-
-  save() async
-  {
-    print('点击 save');
-    prefs = await SharedPreferences.getInstance();
-    prefs?.setString("username", controller.text.toString());
     setState(() {
 
     });
@@ -75,14 +93,14 @@ class _list6State extends State<list6> {
                 height:30,
               ),
               ElevatedButton(
-                child:Text("Save"),
+                child:Text("保存"),
                 onPressed: ()
                 {
-                  save();
+                  saveH5Url();
                 },
               ),
               ElevatedButton(
-                child:Text("retrieve"),
+                child:Text("显示"),
                 onPressed: ()
                 {
                   retrieve();
@@ -101,4 +119,6 @@ class _list6State extends State<list6> {
     );;
   }
 }
+
+
 
