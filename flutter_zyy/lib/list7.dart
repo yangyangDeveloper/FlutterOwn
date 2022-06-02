@@ -8,9 +8,41 @@ class list7 extends StatefulWidget {
   _list7State createState() => _list7State();
 }
 
+class MessageItem {
+  String title;
+  String body;
+  MessageItem(this.title, this.body);
+}
+
 class _list7State extends State<list7> {
 
   SharedPreferences? sharedPreferences;
+
+  List<MessageItem> items = [
+    MessageItem('所属部门', '腾讯公司-科技'),
+    MessageItem('姓名', '小明'),
+    MessageItem('展示名称', 'yangyang'),
+    MessageItem('性别', '男'),
+    MessageItem('上级', ''),
+    MessageItem('同事', '31人'),
+  ];
+
+  // 内容
+  Widget _messageItem(BuildContext context, int index) {
+    final item = items[index];
+    return Container(
+      height: 80,
+      //color: Colors.red,
+      //alignment: Alignment.center,
+      padding: EdgeInsets.fromLTRB(15, 0, 0, 0),
+      decoration: BoxDecoration(color: Colors.white),
+      child: Text(
+        item.title,
+        style: const TextStyle(
+            color: Colors.grey, fontSize: 14, letterSpacing: 1),
+      ),
+    );
+  }
 
   // 设置持久化数据
   void _setData() async {
@@ -33,11 +65,18 @@ class _list7State extends State<list7> {
     // 设置string类型的数组
     await sharedPreferences?.setStringList("action", ["吃饭", "睡觉", "打豆豆"]);
 
-    List<String> keys = sharedPreferences?.getKeys().toList() ?? [];
+    //await sharedPreferences?.setStringList("action", ["吃饭666", "睡觉555", "打豆豆5555]);
+
+    List<String> keys = sharedPreferences?.getStringList("action") ?? [];
     print("niubi");
-    print(keys);
+    print(keys[0]);
+    print(keys[1]);
 
     setState(() {});
+  }
+
+  List<Widget> getListChildren() {
+    return [new Text("第一条:"), new Text("第二条"), new Text("第三条")];
   }
 
   @override
@@ -89,6 +128,24 @@ class _list7State extends State<list7> {
                   fontSize: 20
               ),
             ),
+
+
+
+            // Expanded(
+            //   //解决 Column 中包含ListView 和其他 Container时候  ListView不显示的问题
+            //   flex: 1,
+            //   child: MediaQuery.removePadding(
+            //     //解决listview顶部有个空白的问题。ListView 上默认的的 top-padding
+            //     context: context,
+            //     removeTop: true,
+            //     child: ListView.builder(
+            //       itemCount: items.length,
+            //       itemBuilder: (BuildContext context, int index) {
+            //         return _messageItem(context, index);
+            //       },
+            //     ),
+            //   ),
+            // ),
           ],
         ),
       ),
