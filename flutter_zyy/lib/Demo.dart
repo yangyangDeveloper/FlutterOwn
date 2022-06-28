@@ -15,6 +15,16 @@ import 'list5.dart';
 import 'list6.dart';
 import 'list7.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'list8.dart';
+import 'wraplist.dart';
+import 'mixedList.dart';
+import 'flowList.dart';
+import 'gridView.dart';
+import 'sliverList.dart';
+import 'zyySwiper.dart';
+import 'appBarAlpha.dart';
+import 'persistentHeader.dart';
+import 'zyylivepage.dart';
 
 class Demo extends StatefulWidget {
   const Demo({Key? key}) : super(key: key);
@@ -49,6 +59,16 @@ class _DemoState extends State<Demo> {
     CellItem('web测试'),
     CellItem('web测试2'),
     CellItem('web测试3'),
+    CellItem('列表8-分割线'),
+    CellItem('warp列表'),
+    CellItem('不同列表项的列表'),
+    CellItem('均分列表项的列表'),
+    CellItem('gridviewList'),
+    CellItem('sliverList'),
+    CellItem('ZYY轮播图'),
+    CellItem('appbar渐变'),
+    CellItem('悬浮固定'),
+    CellItem('生活tab'),
   ];
 
   @override
@@ -170,6 +190,75 @@ class _DemoState extends State<Demo> {
           Navigator.push(context,
               MaterialPageRoute(builder: (BuildContext context) {
                 return list7();
+              }));
+        }
+
+        if (i == 12) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return list8();
+              }));
+        }
+
+        if (i == 13) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return wraplist();
+              }));
+        }
+
+        if (i == 14) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return mixedList();
+              }));
+        }
+        if (i == 15) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return flowList();
+              }));
+        }
+
+        if (i == 16) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return gridView();
+              }));
+        }
+
+        if (i == 17) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return sliverList();
+              }));
+        }
+
+        if (i == 18) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return zyySwiper();
+              }));
+        }
+
+        if (i == 19) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return appBarAlpha();
+              }));
+        }
+
+        if (i == 20) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return persistentHeader();
+              }));
+        }
+
+        if (i == 21) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return zyylivepage();
               }));
         }
 
