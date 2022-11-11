@@ -26,6 +26,7 @@ import 'appBarAlpha.dart';
 import 'persistentHeader.dart';
 import 'zyylivepage.dart';
 import 'rowColumLayout.dart';
+import 'container.dart';
 
 class Demo extends StatefulWidget {
   const Demo({Key? key}) : super(key: key);
@@ -71,6 +72,7 @@ class _DemoState extends State<Demo> {
     CellItem('悬浮固定'),
     CellItem('生活tab'),
     CellItem('rowColumlayout'),
+    CellItem('container'),
   ];
 
   @override
@@ -270,6 +272,13 @@ class _DemoState extends State<Demo> {
                 return rowColumLayout();
               }));
         }
+        if (i == 23) {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (BuildContext context) {
+                return container();
+              }));
+        }
+
       },
       title: Text(
         item.heading,

@@ -26,7 +26,6 @@ class Time {
     // now = now.add(Duration(hours: hour));
     // time = now.toString();
 
-
     try {
       var geturl = Uri.parse('http://worldtimeapi.org/api/timezone/$url');
       final response = await http.get(geturl);
